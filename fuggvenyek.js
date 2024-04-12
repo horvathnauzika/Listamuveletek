@@ -1,7 +1,7 @@
 export function tablazatletrehoz(lista){
     let txt = "<div class='table-responsive'><table class=' table table-striped'>";
     txt += "<thead>";
-    txt += "<tr><th>Név</th></tr><tr><th>Kor</th></tr><tr><th>Nem</th></tr><tr><th></th></tr>"
+    txt += "<tr><th>Név</th><th>Kor</th><th>Nem</th><th></th></tr>"
     txt += "</thead>";
     txt += "<tbody>";
     lista.forEach((elem, index) => {
