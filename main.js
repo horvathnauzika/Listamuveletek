@@ -1,18 +1,21 @@
 import { emberekLISTA } from "./adat.js";
 import { megjelenit, tablazatletrehoz } from "./fuggvenyek.js";
-import { rendez2, rendez, szures, szuresKor, szuresNem } from "./adatKezelo.js";
+import { rendez2, szures, szuresKor, szuresNem, torol } from "./adatKezelo.js";
+import { sorBeszur } from "./urlapKezelo.js";
 
 let rIrany = 1;
 init(emberekLISTA);
 szuresNevSzerint();
 szuresKorSzerint();
 szuresNemSzerint();
+sorBeszur(emberekLISTA);
 
 
-function init(lista) {
+export function init(lista) {
   let txt = tablazatletrehoz(lista);
   megjelenit(txt);
   rendezesEsemeny();
+  torolesemeny();
 }
 
 function szuresNevSzerint() {
@@ -71,5 +74,16 @@ function rendezesEsemeny() {
     init(lista);
     rIrany *= -1;
     console.log(rIrany)
+  })
+}
+
+// minden sor mellett lesz egy töröl ikon, amire kattintva megkapjuk az adott sor indexet, és meghívódik a torol függvény
+function torolesemeny(){
+  const torolELEM=$(".torol")
+  torolELEM.on("click", function(event){
+    let index = event.target.id;
+    // az az elem, amelyik kiváltotta az eseményt: event.target
+    const LISTA = torol(emberekLISTA, index)
+    init(LISTA)
   })
 }

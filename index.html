@@ -17,13 +17,18 @@
     </header>
     <article>
         <div class="urlap">
+            <form class="was-validated">
             <div class="mb-3 mt-3">
                 <label for="nev" class="form-label">Név:</label>
-                <input type="text" class="form-control" id="nev" placeholder="Írd be a neved" name="nev">
+                <input type="text" class="form-control" id="nev" pattern="^[A-Z][a-zA-Z]{2,}$" placeholder="Írd be a neved" name="nev" required>
+                <div class="valid-feedback">Ok</div>
+                <div class="invalid-feedback">A név nagybetűvel kezdődik és legalább 3 betű</div>
             </div>
             <div class="mb-3">
                 <label for="kor" class="form-label">Kor:</label>
-                <input type="number" class="form-control" id="kor" min="kor" max="120" name="kor">
+                <input type="number" class="form-control" id="kor" min="kor" max="120" name="kor" required>
+                <div class="valid-feedback">Ok</div>
+                <div class="invalid-feedback">A kor 0 és 120 között lehet</div>
             </div>
             <div class="form-check mb-3">
                 <label class="form-check-label">Férfi:</label>
@@ -35,8 +40,9 @@
                 <input class="form-check-input" type="radio" name="nem" value="no">
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary">Hozzáad</button>
+            <button type="submit" class="btn btn-primary" id="submit">Hozzáad</button>
         </div>
+        </form>
 
         <div class="szuro">
             <h3>Szűrés név szerint</h3>

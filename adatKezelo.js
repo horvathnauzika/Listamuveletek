@@ -41,3 +41,9 @@ export function szuresNem(lista, keresoNem) {
     return lista;
   }
 }
+
+// törli a lista indexedik sorát, minden sor mellett lesz egy töröl ikon, amire kattintva megkapjuk az adott sor indexet, és meghívódik a torol függvény
+export function torol(lista, index){
+  lista.splice(index,1)
+  return lista;
+}

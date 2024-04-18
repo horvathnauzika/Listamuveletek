@@ -9,7 +9,7 @@ export function tablazatletrehoz(lista){
             <td>${elem.nev}</td>
             <td>${elem.kor}</td>
             <td>${elem.nem?"férfi":"nő"}</td>
-            <td><button id="${index}">🗑️</button></td>
+            <td><button id="${index}" class="torol">🗑️</button></td>
         </tr>`
     });
     txt += "</tbody>"
