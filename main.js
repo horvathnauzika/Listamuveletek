@@ -46,7 +46,7 @@ function rendezesEsemeny() {
   //ha rákattintunk a táblázat fejlécére - a név mezőre
   const nevMezoELEM = $(".adatok table th").eq(0); //0. elem
   nevMezoELEM.on("click", function () {
-    const lista = rendez(emberekLISTA, "nev", rIrany);
+    const lista = rendez2(emberekLISTA, "nev", rIrany);
     console.log(lista);
 
     init(lista);
